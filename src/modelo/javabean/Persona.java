@@ -1,5 +1,7 @@
 package modelo.javabean;
 
+import java.util.Objects;
+
 public abstract class Persona {
 //creamos la clase abstracta y las propiedades protected
 	
@@ -59,6 +61,27 @@ public abstract class Persona {
 				+ "]";
 	}
 	
+	
+	//Equals and hascode solo de nif
+	@Override
+	public int hashCode() {
+		return Objects.hash(nif);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		return Objects.equals(nif, other.nif);
+	}
+
+
 	//creamos los metodos
 	public String llamar(Persona p) {
 		return (p.nombre +" llamando a "+ getNombre() );
