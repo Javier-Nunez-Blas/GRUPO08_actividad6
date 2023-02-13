@@ -14,32 +14,33 @@ public class Profesor extends Persona{
 		this.competencias = competencias;
 	}
 	
-	//Getter and setter de competencia.
+	//Getter and setter
+
 	public String getCompetencias() {
 		return competencias;
 	}
 	public void setCompetencias(String competencias) {
 		this.competencias = competencias;
-	}
 	
-	//to string, poniendo primero los que hereda y luego los porpios.
+	}
+	//to string
 	@Override
 	public String toString() {
-		return "Profesor [nif=" + nif + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono
-				+ ", competencias=" + competencias + "]";
+		return "Profesor [getNif()=" + getNif() + ", getNombre()=" + getNombre() + ", getDireccion()=" + getDireccion()
+				+ ", getTelefono()=" + getTelefono() + ", competencias=" + competencias + "]";
 	}
-	
 	//implementamos los metodos heredados
 	@Override
 	public String trabajar() {
-		return "El profesor "+ nombre + " va a impartir su clase";
+		return "El profesor "+ getNombre() + " va a impartir su clase";
 		
 	}
 	
 	//Creamos los metodos propios
 	
+
 	public String ponerNotas() {
-		return ("El profesor " + nombre +" va a corregir los exámenes");
+		return ("El profesor " + getNombre() +" va a corregir los exámenes");
 	}
 	
 	

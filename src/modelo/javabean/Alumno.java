@@ -25,21 +25,25 @@ public class Alumno extends Persona{
 		this.curso = curso;
 	}
 
-	//toString (primero lo de mi padre y después lo mio)
+	//toString 
+
 	@Override
 	public String toString() {
-		return "Alumno [nif=" + nif + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono
-				+ ", curso=" + curso + "]";
-	}
+		return "Alumno [getNif()=" + getNif() + ", getNombre()=" + getNombre() + ", getDireccion()=" + getDireccion()
+				+ ", getTelefono()=" + getTelefono() + ", toString()=" + super.toString() + ", hashCode()=" + hashCode()
+				+ ", getClass()=" + getClass() + ", curso=" + curso + "]";
 
+	}
 	//implemento métodos abstractos de mi padre y los redefino
 	@Override
 	public String trabajar() {
-		return "El alumno " + nombre + " va a estudidar para el curso " + curso;
+		return "El alumno " + getNombre() + " va a estudidar para el curso " + curso;
 	}
+
+
 
 	//métodos propios
 	public String hacerExamen() {
-		return "El alumno " + nombre + " va a hacer su exámen. ";
+		return "El alumno " + getNombre() + " va a hacer su exámen. ";
 	}
 }

@@ -51,33 +51,32 @@ public class InstitutoDao implements IntInstitutoDao{
 
 	@Override
 	public boolean altaPersona(Persona persona) {
-		// TODO Auto-generated method stub
-		return false;
+		if(personas.contains(persona))
+			return false;
+			else
+			return personas.add(persona);
 	}
 
 	@Override
 	public Persona buscarPersona(String nif) {
-		Persona persona1 = new Persona();
-		
-			persona1.setNif(nif);
-		
-			int posicion = personas.indexOf(persona1);
-			if (posicion == -1) {
-				return null;}
-			return personas.get(posicion);
+		Alumno alumno = new Alumno();
+		alumno.setNif(nif);
+
+		int posicion = personas.indexOf(alumno);
+		if (posicion == -1)
+			return null;
+		return personas.get(posicion);
 		
 	}
 
 	@Override
 	public List<Persona> buscarTodas() {
-		// TODO Auto-generated method stub
-		return null;
+		return personas;
 	}
 
 	@Override
 	public boolean eliminarPersonas(Persona persona) {
-		// TODO Auto-generated method stub
-		return false;
+			return personas.remove(persona);
 	}
 
 	@Override
