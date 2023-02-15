@@ -1,6 +1,7 @@
 package testing;
 
 
+import modelo.javabean.Administrativo;
 import modelo.javabean.Alumno;
 import modelo.javabean.Profesor;
 
@@ -13,17 +14,18 @@ public class testPersona {
 				
 		Alumno alumno1 = new Alumno("53976554Q", "Maria López", "Calle Virgen María", "643879605", "1ºDAW");
 	
-		
+		Administrativo administrativo1 = new Administrativo("122334546P" , "antonio" , "calle santo angel" , "678342376" , "hacer matricula y controlar asistencia");
+				
 		//Ejecutamos el metodo toString() de cada objeto.
 		System.out.println(profesor1.toString());
 		System.out.println(alumno1.toString());
-		
+		System.out.println(administrativo1.toString());
 		System.out.println();
 		
 		//Ejecutamos el metodo trabajar() de cada objeto.
 		System.out.println(profesor1.trabajar());
 		System.out.println(alumno1.trabajar());
-		
+		System.out.println(administrativo1.trabajar());
 		System.out.println();
 		
 		//Ejecuta el método llamar(Persona p) para que el alumno llame al profesor.
@@ -38,7 +40,7 @@ public class testPersona {
 		System.out.println(((Alumno)alumno1).hacerExamen());
 		
 		//Ejecuta el método gestionarMatricula() del objeto Administrativo.
-		
+		System.out.println(((Administrativo)administrativo1).gestionarMatricula());
 		 
 	}
 }
