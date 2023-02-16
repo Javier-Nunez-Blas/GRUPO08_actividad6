@@ -3,6 +3,8 @@ package modelo.javabean;
 import java.util.Objects;
 
 public abstract class Persona {
+
+
 //creamos la clase abstracta y las propiedades protected, son privadas excepto para las clases hijas
 	
 	private String nif;

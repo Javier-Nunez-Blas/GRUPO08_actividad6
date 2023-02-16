@@ -16,7 +16,7 @@ public class Alumno extends Persona{
 		this.curso = curso;
 	}
 
-	//getters & setters con todo
+	//getters & setters
 	public String getCurso() {
 		return curso;
 	}
@@ -27,13 +27,14 @@ public class Alumno extends Persona{
 
 	//toString 
 
+
 	@Override
 	public String toString() {
-		return "Alumno [getNif()=" + getNif() + ", getNombre()=" + getNombre() + ", getDireccion()=" + getDireccion()
-				+ ", getTelefono()=" + getTelefono() + ", toString()=" + super.toString() + ", hashCode()=" + hashCode()
-				+ ", getClass()=" + getClass() + ", curso=" + curso + "]";
-
+		return "Alumno [curso=" + curso + ", getNif()=" + getNif() + ", getNombre()=" + getNombre()
+				+ ", getDireccion()=" + getDireccion() + ", getTelefono()=" + getTelefono() + "]";
 	}
+
+
 	//implemento métodos abstractos de mi padre y los redefino
 	@Override
 	public String trabajar() {

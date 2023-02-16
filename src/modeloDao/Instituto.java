@@ -12,6 +12,8 @@ import modelo.javabean.Profesor;
 
 public class Instituto implements IntInstitutoDao{
 	
+	//Creamos la Lista personas y con el metodo cargarDatos le añadimos 2 alumnos, 2 profesores y 2 administrativos
+	
 	private List<Persona> personas;
 	
 	public Instituto() {
@@ -36,6 +38,7 @@ public class Instituto implements IntInstitutoDao{
 		personas.add(adm2);
 	}		
 	
+	//equals and has codde
 	@Override
 	public int hashCode() {
 		return Objects.hash(personas);
@@ -52,7 +55,10 @@ public class Instituto implements IntInstitutoDao{
 		Instituto other = (Instituto) obj;
 		return Objects.equals(personas, other.personas);
 	}
-
+	
+// creamos el metodo alta persona: recibe una Persona, con un if comprobamos si 
+// esa Persona ya esta dentro de la Lista personas, si ya esta, devuelve false, y 
+// si no esta, devuelve true y añade la Persona a la Lista personas
 	@Override
 	public boolean altaPersona(Persona persona) {
 		if(personas.contains(persona))
@@ -60,33 +66,40 @@ public class Instituto implements IntInstitutoDao{
 			else
 			return personas.add(persona);
 	}
-
+	
+// Metodo buscarPersona: nos creamos un nuevo Alumno, 
 	@Override
 	public Persona buscarPersona(String nif) {
-		Alumno alumno = new Alumno();
-		alumno.setNif(nif);
-
-		int posicion = personas.indexOf(alumno);
-		if (posicion == -1)
-			return null;
-		return personas.get(posicion);
 		
+		Persona per = new Persona();	
+		
+		int pos = personas.indexOf(per);
+		if (pos == -1){
+			return null;
+		return personas.get(pos);
+		}
 	}
-
+	
+// devuelve la Lista personas
 	@Override
 	public List<Persona> buscarTodas() {
 		return personas;
 	}
-
+	
+// recibe una Persona, y la elimina de la Lista personas
 	@Override
 	public boolean eliminarPersonas(Persona persona) {
 			return personas.remove(persona);
 	}
 
+	
+//Metodo buscar persona por tipo: recibe un string que comparamos con un switch, para cada caso
+//Si coincide con "profesor": creamos un Arraylist llamado profesores, recorremos la Lista personas
+// y si la persona es un profesor, esa persona la añadimos a ArrayList de profesor. Lo mismo para 
+//alumno y administrativo. Si no devuelve null
 	@Override
-
     public ArrayList<Persona> buscarPersonaPorTipo(String tipoPersona) {
-       switch (tipoPersona) {
+       switch (tipoPersona.toLowerCase()) {
            case "profesor":
                ArrayList<Persona> profesores = new ArrayList<>();
                for (Persona persona: this.personas){
