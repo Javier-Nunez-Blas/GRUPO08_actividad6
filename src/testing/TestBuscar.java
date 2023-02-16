@@ -1,11 +1,5 @@
 package testing;
 
-import java.util.ArrayList;
-
-import modelo.javabean.Administrativo;
-import modelo.javabean.Alumno;
-import modelo.javabean.Persona;
-import modelo.javabean.Profesor;
 import modeloDao.Instituto;
 
 public class TestBuscar {
