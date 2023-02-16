@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import modelo.javabean.Administrativo;
 import modelo.javabean.Alumno;
 import modelo.javabean.Persona;
 import modelo.javabean.Profesor;
@@ -24,11 +25,14 @@ public class InstitutoDao implements IntInstitutoDao{
 		Alumno alum2 = new Alumno("50238293D","Luis", "Calle Abeto 12", "753402934", "1ºDaw");
 		Profesor prof1 = new Profesor("34045923L", "Tomas","Call Tejo 9", "640392392", "Programacion");
 		Profesor prof2 = new Profesor("21829342P", "Maria","Call Tilo 32", "660283492", "BBDD");
-		
+		Administrativo adm1 = new Administrativo("34958434L", "Pedro", "Calle Acebo 34", "660349239", "Contabilidad");
+		Administrativo adm2 = new Administrativo("93822391H", "Ana", "Calle Sauce 4", "782039251", "Recursos humanos");
 		personas.add(prof2);
 		personas.add(prof1);
 		personas.add(alum1);
 		personas.add(alum2);
+		personas.add(adm1);
+		personas.add(adm2);
 	}		
 
 	
@@ -81,8 +85,11 @@ public class InstitutoDao implements IntInstitutoDao{
 
 	@Override
 	public List<Persona> buscarPersonaPorTipo(String tipoPersona) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Persona> aux = new ArrayList<>();
+		
+		for (Persona ele: personas) {
+			if ( tipoPersona instanceof )
+	    }
 	}
 	
 	

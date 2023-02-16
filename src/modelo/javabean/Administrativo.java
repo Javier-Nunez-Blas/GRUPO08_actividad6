@@ -29,11 +29,11 @@ public class Administrativo extends Persona{
 		return "el administrativo " + getNombre() + " va a realizar estas tareas " + this.tarea;
 	}
 //sobrescribimos el metodo toString
+
 	@Override
 	public String toString() {
-		return "Administrativo [tarea=" + tarea
-				+ "nif=" + getNif() + ", nombre=" + getNombre() + ", direccion=" + getDireccion() + ", telefono=" + getTelefono()
-				+ "]";
+		return "Administrativo [getNif()=" + getNif() + ", getNombre()=" + getNombre() + ", getDireccion()="
+				+ getDireccion() + ", getTelefono()=" + getTelefono() + ", tarea=" + tarea + "]";
 	}
 
 
