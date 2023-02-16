@@ -12,7 +12,7 @@ import modelo.javabean.Profesor;
 
 public class InstitutoDao implements IntInstitutoDao{
 	
-	private ArrayList<Persona> personas;
+	private List<Persona> personas;
 	
 	public InstitutoDao() {
 		personas = new ArrayList<>();
@@ -87,13 +87,13 @@ public class InstitutoDao implements IntInstitutoDao{
 	public List<Persona> buscarPersonaPorTipo(String tipoPersona) {
 		List<Persona> aux = new ArrayList<>();
 		
-		for (Persona ele: personas) {
-			if ( tipoPersona instanceof )
-	    }
+			
+		for (Persona persona : personas) {
+		if ( persona.getClass().getSimpleName().equals(tipoPersona))
+			aux.add(persona);
+			
+		}
+		return aux;
+	
 	}
-	
-	
-
-	
-
 }
