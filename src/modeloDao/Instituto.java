@@ -4,16 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import modelo.javabean.Administrativo;
 import modelo.javabean.Alumno;
 import modelo.javabean.Persona;
 import modelo.javabean.Profesor;
 
 
-public class InstitutoDao implements IntInstitutoDao{
+public class Instituto implements IntInstitutoDao{
 	
 	private ArrayList<Persona> personas;
 	
-	public InstitutoDao() {
+	public Instituto() {
 		personas = new ArrayList<>();
 		cargarDatos();
 	}
@@ -24,11 +25,15 @@ public class InstitutoDao implements IntInstitutoDao{
 		Alumno alum2 = new Alumno("50238293D","Luis", "Calle Abeto 12", "753402934", "1ºDaw");
 		Profesor prof1 = new Profesor("34045923L", "Tomas","Call Tejo 9", "640392392", "Programacion");
 		Profesor prof2 = new Profesor("21829342P", "Maria","Call Tilo 32", "660283492", "BBDD");
-		
+        Persona administrativo = new Administrativo("54678877Y", "Paco", "calle Huelva 21", "675334433", "Hacer matriculas, controlar asistencia");
+        Persona administrativo2 = new Administrativo("54677657Y", "Alicia", "calle Sevilla 21", "609874433", "Controlar asistencia");
+
 		personas.add(prof2);
 		personas.add(prof1);
 		personas.add(alum1);
 		personas.add(alum2);
+		personas.add(administrativo);
+		personas.add(administrativo2);
 	}		
 
 	
@@ -45,7 +50,7 @@ public class InstitutoDao implements IntInstitutoDao{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		InstitutoDao other = (InstitutoDao) obj;
+		Instituto other = (Instituto) obj;
 		return Objects.equals(personas, other.personas);
 	}
 
@@ -80,10 +85,39 @@ public class InstitutoDao implements IntInstitutoDao{
 	}
 
 	@Override
-	public List<Persona> buscarPersonaPorTipo(String tipoPersona) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public ArrayList<Persona> buscarPersonaPorTipo(String tipoPersona) {
+       switch (tipoPersona) {
+           case "profesor":
+               ArrayList<Persona> profesores = new ArrayList<>();
+               for (Persona persona: this.personas){
+                   if(persona instanceof Profesor){
+                       profesores.add(persona);
+                   }
+               }
+
+               return profesores;
+           case "alumno":
+               ArrayList<Persona> alumnos = new ArrayList<>();
+               for (Persona persona: this.personas){
+                   if(persona instanceof Alumno){
+                       alumnos.add(persona);
+                   }
+               }
+
+               return alumnos;
+           case "administrativo":
+               ArrayList<Persona> administrativos = new ArrayList<>();
+               for (Persona persona: this.personas){
+                   if(persona instanceof Administrativo){
+                       administrativos.add(persona);
+                   }
+               }
+               return administrativos;
+
+           default:
+               return null;
+       }
+    }
 	
 	
 

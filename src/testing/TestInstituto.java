@@ -1,7 +1,7 @@
 package testing;
 
 
-import modeloDao.InstitutoDao;
+import modeloDao.Instituto;
 import modelo.javabean.Alumno;
 import modelo.javabean.Profesor;
 import modelo.javabean.Persona;
@@ -10,7 +10,7 @@ public class TestInstituto {
 
 	public static void main(String[] args) {
 		
-		InstitutoDao miInstituto = new InstitutoDao();
+		Instituto miInstituto = new Instituto();
 		
 		System.out.println("Añadir una persona, 'alumno3'");
 		
