@@ -10,11 +10,11 @@ import modelo.javabean.Persona;
 import modelo.javabean.Profesor;
 
 
-public class InstitutoDao implements IntInstitutoDao{
+public class Instituto implements IntInstitutoDao{
 	
 	private ArrayList<Persona> personas;
 	
-	public InstitutoDao() {
+	public Instituto() {
 		personas = new ArrayList<>();
 		cargarDatos();
 	}
@@ -27,6 +27,7 @@ public class InstitutoDao implements IntInstitutoDao{
 		Profesor prof2 = new Profesor("21829342P", "Maria","Call Tilo 32", "660283492", "BBDD");
 		Administrativo adm1 = new Administrativo("34958434L", "Pedro", "Calle Acebo 34", "660349239", "Contabilidad");
 		Administrativo adm2 = new Administrativo("93822391H", "Ana", "Calle Sauce 4", "782039251", "Recursos humanos");
+		
 		personas.add(prof2);
 		personas.add(prof1);
 		personas.add(alum1);
@@ -34,7 +35,6 @@ public class InstitutoDao implements IntInstitutoDao{
 		personas.add(adm1);
 		personas.add(adm2);
 	}		
-
 	
 	@Override
 	public int hashCode() {
@@ -49,7 +49,7 @@ public class InstitutoDao implements IntInstitutoDao{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		InstitutoDao other = (InstitutoDao) obj;
+		Instituto other = (Instituto) obj;
 		return Objects.equals(personas, other.personas);
 	}
 
@@ -84,16 +84,37 @@ public class InstitutoDao implements IntInstitutoDao{
 	}
 
 	@Override
-	public List<Persona> buscarPersonaPorTipo(String tipoPersona) {
-		List<Persona> aux = new ArrayList<>();
-		
-		for (Persona ele: personas) {
-			if ( tipoPersona instanceof )
-	    }
-	}
-	
-	
+    public ArrayList<Persona> buscarPersonaPorTipo(String tipoPersona) {
+       switch (tipoPersona) {
+           case "profesor":
+               ArrayList<Persona> profesores = new ArrayList<>();
+               for (Persona persona: this.personas){
+                   if(persona instanceof Profesor){
+                       profesores.add(persona);
+                   }
+               }
 
-	
+               return profesores;
+           case "alumno":
+               ArrayList<Persona> alumnos = new ArrayList<>();
+               for (Persona persona: this.personas){
+                   if(persona instanceof Alumno){
+                       alumnos.add(persona);
+                   }
+               }
 
+               return alumnos;
+           case "administrativo":
+               ArrayList<Persona> administrativos = new ArrayList<>();
+               for (Persona persona: this.personas){
+                   if(persona instanceof Administrativo){
+                       administrativos.add(persona);
+                   }
+               }
+               return administrativos;
+
+           default:
+               return null;
+       }
+    }
 }

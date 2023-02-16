@@ -3,13 +3,13 @@ package testing;
 import modelo.javabean.Administrativo;
 import modelo.javabean.Alumno;
 import modelo.javabean.Persona;
-import modeloDao.InstitutoDao;
+import modeloDao.Instituto;
 
 public class testInstituo2 {
 
 	public static void main(String[] args) {
 	
-	InstitutoDao miInstituto = new InstitutoDao();
+	Instituto miInstituto = new Instituto();
 	Persona alumno, administrativo, profesor;
 	
 
