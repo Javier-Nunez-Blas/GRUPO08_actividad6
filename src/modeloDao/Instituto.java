@@ -71,13 +71,14 @@ public class Instituto implements IntInstitutoDao{
 	@Override
 	public Persona buscarPersona(String nif) {
 		
-		Persona per = new Persona();	
-		
+		Persona per = new Profesor();	
+		per.setNif(nif);
 		int pos = personas.indexOf(per);
-		if (pos == -1){
+		if (pos == -1)
 			return null;
+		
 		return personas.get(pos);
-		}
+		
 	}
 	
 // devuelve la Lista personas
