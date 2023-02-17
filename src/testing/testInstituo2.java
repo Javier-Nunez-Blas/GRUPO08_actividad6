@@ -13,8 +13,11 @@ public class testInstituo2 {
 	for (Persona ele : miInstituto.buscarTodas() ) {
 		System.out.println(ele);
 	}
-	System.out.println("Buscar una persona por el nif: '23934383G'");
-	System.out.println(miInstituto.buscarPersona("34958434L"));
+	System.out.println();
+	
+	System.out.println("Buscar una persona por el nif: '21829342P'");
+	System.out.println(miInstituto.buscarPersona("21829342P"));
+	
 	
 
 	}

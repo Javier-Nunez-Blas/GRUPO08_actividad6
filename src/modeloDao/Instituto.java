@@ -69,17 +69,15 @@ public class Instituto implements IntInstitutoDao{
 	
 // Metodo buscarPersona: nos creamos un nuevo Alumno, 
 	@Override
-	public Persona buscarPersona(String nif) {
-		
-		Persona per = new Profesor();	
-		per.setNif(nif);
-		int pos = personas.indexOf(per);
-		if (pos == -1)
-			return null;
-		
-		return personas.get(pos);
-		
-	}
+	  public Persona buscarPersona(String nif) {
+        for (Persona p: this.personas){
+            if(p.getNif().equalsIgnoreCase(nif)){
+                return p;
+            }
+        }
+
+        return null;
+    }
 	
 // devuelve la Lista personas
 	@Override
